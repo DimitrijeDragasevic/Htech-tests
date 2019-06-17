@@ -13,16 +13,16 @@ Feature: Login feature
 
 Scenario: Check for the login page
    When I am on the the QA sandbox page
-#    And I click on the log in tab
-#    Then I should see the log in title, email input, password input and the submit button
+   And I click on the log in tab
+   Then I should see the log in title, email input, password input and the submit button
 
 # Scenario: Log in with random characters instead of a email address
-#    When I am on the the QA sandbox page
-#    And I click on the log in tab
-#    And I enter something that is not an email address
-#    And I enter a random password
-#    And I press the submit button
-#    Then I should be presented with a indication that I have not entered an email address
+    When I am on the the QA sandbox page
+    And I click on the log in tab
+    And I enter something that is not an email address
+    And I enter a random password
+    And I press the submit button
+    Then I should be presented with a indication that I have not entered a valid email address
 
 # Scenario: Log in with incorrect email
 #    When I am on the the QA sandbox page
