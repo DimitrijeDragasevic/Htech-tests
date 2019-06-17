@@ -12,19 +12,18 @@ Parameters:
 
 How to Run:
 
-     Open two terminals and open the root of the project
+Open two terminals in the root of the project 
 
 
-
--> In the first run these commands:
-
-
-1. `npm install`
-2. `./node_modules/.bin/selenium-standalone install `
-3. `./node_modules/.bin/selenium-standalone start`
+In the first run these commands to start Selenium:
 
 
-->  In the other terminal run tests like these examples:
+1. ``` npm install```
+2. ```./node_modules/.bin/selenium-standalone install ```
+3. ```./node_modules/.bin/selenium-standalone start```
+
+
+In the other terminal run tests like these examples:
 
 1. `./run.sh dev chrome`
 2. `./run.sh stage chrome` 

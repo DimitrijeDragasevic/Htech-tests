@@ -5,19 +5,6 @@ const config = require('../../config/config')
 const assert = require('assert')
 
 class LoginPage extends Page {
-// Selectors
-  // get createAccountButtonONE () {return '[class="enrg-button enrg-button--large enrg-button--wide enrg-button--primary"]'}
-  // get mainContainer () {return '[class="enrg-app"]'}
-  // get createAccountPageTxt () {return '[class="enrg-header__title"]'}
-  // get emailfieldSel () {return '[name="email"]'}
-  // get passwordSel () {return '[name="password"]'}
-  // get reapetPasswordSel () {return '[name="matchPassword"]'}
-  // get countrySel () {return '[name="regionName"]'}
-  // get cityfielSel () {return '[name="city"]'}
-  // get nicknamefielSel () {return '[name="name"]'}
-  // get continueButtSel () {return '[type="submit"]'}
-  // get totalTitleSel () {return '[class="enrg-verify__title"]'}
-
   get mainAppTittleSel () { return '[class="navbar-brand  noselect"]' }
   get lanPageTitleSel () { return '[class="display-3 mb-4"]' }
   get logInButtonSel () { return '[class="btn btn-lg btn-secondary"]' }
@@ -30,17 +17,7 @@ class LoginPage extends Page {
   get userCard () { return '[class="card border-card shadow-lg p-3 "]' }
   get loggedInCards () { return '[class="dashboard"]' }
   get logoutButton () { return '[class="nav-link mr-3"]' }
-  // Elements
-  // get createAccountButton () {return this.browser.element(this.createAccountButtonONE)}
-  // get emailTextField () {return this.browser.element(this.emailfieldSel)}
-  // get passwordTextField () {return this.browser.element(this.passwordSel)}
-  // get reapetPasswordTextField () {return this.browser.element(this.reapetPasswordSel)}
-  // get selectListCountry () {return this.browser.element(this.countrySel)}
-  // get cityTextField () {return this.browser.element(this.cityfielSel)}
-  // get nicknameTextField () {return this.browser.element(this.nicknamefielSel)}
-  // get createAccBtn () {return this.browser.element(this.continueButtSel)}
 
-  // Methods
   async checkForClientStart () {
     await super.open()
     await this.browser.waitForVisible(this.mainAppTittleSel, config.waitTime.medium)
@@ -75,8 +52,10 @@ class LoginPage extends Page {
   async clickOnSubmit () {
     await this.click(this.submitButtonSel)
   }
-  /* since i cannot catch the selector of the '@' popup.
-        i can only validate it by not loging in */
+  /*
+   since I cannot catch the selector of the '@' popup.
+    I can only validate it by not loging in
+*/
   async badEmailNot () {
     let userCard = await this.browser.isExisting(this.userCard)
     if (userCard) {
