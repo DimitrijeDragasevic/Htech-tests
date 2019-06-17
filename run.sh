@@ -17,7 +17,7 @@
 # in the other terminal run tests like these examples:
 # $ ./run.sh stage firefox
 # $ ./run.sh prod chrome
-# $ ./run.sh prod chrome features/log_in.feature
+# $ ./run.sh prod chrome features/login.feature
 # 
 #
 

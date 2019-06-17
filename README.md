@@ -1,6 +1,6 @@
-# EC Dashboard cucumber tests
+# Htech tests
 
-Convenience script for running GPlay Publisher Account tests.
+Convenience script for running Qa sandbox autoamtion.
 
 
 Parameters:
