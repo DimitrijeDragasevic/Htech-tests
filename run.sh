@@ -1,5 +1,5 @@
 
-# Convenience script for running GPlay Publisher Account tests.
+# Convenience script for running Qa sand box tests.
 #
 # Parameters:
 # $3 environment (stage, prod) (default: stage)
