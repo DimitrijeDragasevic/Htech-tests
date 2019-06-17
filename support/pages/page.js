@@ -8,10 +8,9 @@ class Page {
     this.page = world.page
   }
 
-  async open (relativeUrl) {
-    await this.browser.url(`${TestData.getBaseUrl()}/${relativeUrl}`)
+  async open () {
+    await this.browser.url(`${TestData.getBaseUrl()}`)
   }
 }
-
 
 module.exports = Page

@@ -1,6 +1,6 @@
 # Htech tests
 
-Convenience script for running Qa sandbox autoamtion.
+Convenience script for running Qa sandbox automation.
 
 
 Parameters:

@@ -1,0 +1,30 @@
+2019-06-17T20:23:22.578Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:23:22.630Z [INFO]  energyDashboard: Scenario 'Check for the login page' failed!
+2019-06-17T20:24:11.591Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:24:13.436Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:24:13.448Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:24:14.506Z [INFO]  energyDashboard: Scenario 'Check for the login page' failed!
+2019-06-17T20:25:29.606Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:25:30.566Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:25:30.577Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:25:41.543Z [INFO]  energyDashboard: Scenario 'Check for the login page' failed!
+2019-06-17T20:26:02.354Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:26:03.279Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:26:03.288Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:26:14.332Z [INFO]  energyDashboard: Scenario 'Check for the login page' failed!
+2019-06-17T20:27:02.280Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:27:03.217Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:27:03.237Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:27:04.278Z [INFO]  energyDashboard: Scenario 'Check for the login page' passed!
+2019-06-17T20:30:51.305Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:30:52.246Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:30:52.259Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:30:53.313Z [INFO]  energyDashboard: Scenario 'Check for the login page' passed!
+2019-06-17T20:31:24.932Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:31:25.860Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:31:25.880Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:31:26.874Z [INFO]  energyDashboard: Scenario 'Check for the login page' passed!
+2019-06-17T20:31:51.344Z [INFO]  energyDashboard: Initialize test run...
+2019-06-17T20:31:52.249Z [INFO]  energyDashboard: parameters: {"environment":"prod","browser":"chrome"}
+2019-06-17T20:31:52.270Z [INFO]  energyDashboard: Start tests: Check for the login page
+2019-06-17T20:31:53.299Z [INFO]  energyDashboard: Scenario 'Check for the login page' passed!
