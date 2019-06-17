@@ -26,9 +26,10 @@ class LoginPage extends Page {
   get logInPageTitleSel () { return '[class="display-4 text-center"]' }
   get logInPageSubTitleSel () { return '[class="lead text-center"]' }
   get submitButtonSel () { return '[type="submit"]' }
-  get invalidEmailNot () { return '[class="invalid-feedback"]' }
+  get error () { return '[class="invalid-feedback"]' }
   get userCard () { return '[class="card border-card shadow-lg p-3 "]' }
-
+  get loggedInCards () { return '[class="dashboard"]' }
+  get logoutButton () { return '[class="nav-link mr-3"]' }
   // Elements
   // get createAccountButton () {return this.browser.element(this.createAccountButtonONE)}
   // get emailTextField () {return this.browser.element(this.emailfieldSel)}
@@ -82,26 +83,32 @@ class LoginPage extends Page {
       throw new Error('you have logged in without and EMAIL!!!!!!!')
     }
   }
+
+  async notFoundWar () {
+    await this.browser.waitForVisible(this.error, config.waitTime.medium)
+    let text = await this.browser.getText(this.error)
+    assert.strictEqual(text, 'User not found', 'The error message text does not match the provided one')
+  }
+
+  async badPassCheck () {
+    await this.browser.waitForVisible(this.error, config.waitTime.medium)
+    let text = await this.browser.getText(this.error)
+    assert.strictEqual(text, 'Password incorrect', 'The error message text does not match the provided one')
+  }
+
+  async checkLogedInPage () {
+    await this.browser.waitForVisible(this.loggedInCards, config.waitTime.medium)
+    let logoutButton = await this.browser.isExisting(this.logoutButton)
+    if (!logoutButton) {
+      throw new Error('The logout button is not Existing')
+    }
+  }
+
+  async sixCaracterWar () {
+    await this.browser.waitForVisible(this.error, config.waitTime.medium)
+    let text = await this.browser.getText(this.error)
+    assert.strictEqual(text, 'Password must be at least 6 characters long', 'the warring is not the one provided')
+  }
 }
-
-// async createAccount () {
-//     await this.browser.waitForVisible(this.createAccountPageTxt, config.waitTime.medium)
-//     await this.emailTextField.setValue(TestData.getUser('user_1').email)
-//     await this.passwordTextField.setValue(TestData.getUser('user_1').password)
-//     await this.reapetPasswordTextField.setValue(TestData.getUser('user_1').reapetPassword)
-//     // await this.selectListCountry.setValue(TestData.getUser('user_1').country)
-//     // await this.selectListCountry[TestData.getUser('user_1').country].click()
-//     await this.selectListCountry.selectByAttribute('value', TestData.getUser('user_1').country)
-//     await this.cityTextField.setValue(TestData.getUser('user_1').city)
-//     await this.nicknameTextField.setValue(TestData.getUser('user_1').nickname)
-//     await this.createAccBtn.click()
-// }
-
-// async checkIfCreate () {
-//     await this.browser.waitForVisible(this.totalTitleSel, config.waitTime.medium)
-//     await this.browser.waitForText(this.totalTitleSel, config.waitTime.medium)
-//     let totalTitle = await this.browser.getText(this.totalTitleSel)
-//     // assert.strictEqual(totalTitle[0], 'Total accumulated', `the string ${totalTitle[0]} does not mach "Total accumulated" `)
-// }
 
 module.exports = LoginPage

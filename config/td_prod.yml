@@ -9,8 +9,15 @@
 users:
   user_1:
     email: dimitrije.dragasevic@gmail.com
-    password: dimitrije1994
+    password: Dimitrije1994
 
   user_random:
     email: blablabla123
     password: 123456!
+
+  user_2:
+    email: konan.norris@gmail.com
+    password: test123!
+
+  user_less:
+    password: as2 

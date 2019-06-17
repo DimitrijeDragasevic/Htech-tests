@@ -16,34 +16,42 @@ Scenario: Check for the login page
    And I click on the log in tab
    Then I should see the log in title, email input, password input and the submit button
 
-# Scenario: Log in with random characters instead of a email address
-    When I am on the the QA sandbox page
-    And I click on the log in tab
-    And I enter something that is not an email address
-    And I enter a random password
-    And I press the submit button
-    Then I should be presented with a indication that I have not entered a valid email address
+Scenario: Log in with random characters instead of a email address
+   When I am on the the QA sandbox page
+   And I click on the log in tab
+   And I enter something that is not an email address
+   And I enter a random password
+   And I press the submit button
+   Then I should be presented with a indication that I have not entered a valid email address
 
-# Scenario: Log in with incorrect email
-#    When I am on the the QA sandbox page
-#    And I click on the log in tab
-#    And I enter a random email address
-#    And I enter a random password
-#    And I press the submit button
-#    Then I should be presented with a screen that indicates that my credentials are incorrect
+Scenario: Log in with incorrect email
+   When I am on the the QA sandbox page
+   And I click on the log in tab
+   And I enter a random email address
+   And I enter a random password
+   And I press the submit button
+   Then I should be presented with a screen that indicates that my credentials are incorrect
 
-# Scenario: Log in with a incorrect password
-#    When I am on the the QA sandbox page
-#    And I click on the log in tab
-#    And I enter an email address of a test user
-#    And I enter a random password
-#    And I press the submit button
-#    Then I should be presented with a screen that indicates that my credentials are incorrect
+Scenario: Log in with a incorrect password
+   When I am on the the QA sandbox page
+   And I click on the log in tab
+   And I enter an email address of a test user
+   And I enter a random password
+   And I press the submit button
+   Then I should be presented with a screen that indicates that my password is incorrect
 
-# Scenario: Log in with the correct credentials
-#    When I am on the the QA sandbox page
-#    And I click on the log in tab
-#    And I enter the email address of a test user
-#    And I enter the password of a test user
-#    And I press the submit button
-#    Then I should be logged in
+Scenario: Log in with password less the 6 caracters
+   When I am on the the QA sandbox page
+   And I click on the log in tab
+   And I enter the email address of a test user
+   And I enter a password that is less then 6 caracters
+   And I press the submit button
+   Then I should see the warning that the password must be longer then 6 characters
+
+Scenario: Log in with the correct credentials
+   When I am on the the QA sandbox page
+   And I click on the log in tab
+   And I enter the email address of a test user
+   And I enter the password of a test user
+   And I press the submit button
+   Then I should be logged in
