@@ -46,8 +46,8 @@ class TestData {
     return TestData.data.url
   }
 
-  static getUseCase() {
-    return TestData.data.use_cases
+  static getUseCase (scenario) {
+    return TestData.data.use_cases[scenario]
   }
 }
 
