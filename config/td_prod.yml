@@ -21,3 +21,62 @@ users:
 
   user_less:
     password: as2 
+
+use_cases:
+  first:
+    title: Check for the login page
+    descrption: This test case is used to determine that the Log in page is loaded correctly
+    expected_result: Log in page opening with correct fields and tittle and text
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: Then I should see the log in title, email input, password input and the submit button
+  second:
+    title: Log in with password less the 6 characters
+    description: This test is used to verify if you can log in with less then 6 characters
+    expected_result: Unsuccessful log in
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: And I enter the email address of a test user
+    step_4: And I enter a password that is less then 6 caracters
+    step_5: And I press the submit button
+    step_6: Then I should see the warning that the password must be longer then 6 characters
+  third:
+    title: Log in with random characters instead of a email address
+    description: This test case is used to determine if you can log in without a email address. For example a random string of characters.
+    expected_result: Please enter something that contains a "@" character
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: And I enter something that is not an email address
+    step_4: And I enter a random password
+    step_5: And I press the submit button
+    step_6: Then I should be presented with a indication that I have not entered a valid email address
+  fourth:
+    title: Log in with incorrect email
+    description: This test case is used to verify that you cannot log in with an incorrect email
+    expected_result: Unsuccessful log in 
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: And I enter a random email address
+    step_4: And I enter a random password
+    step_5: And I press the submit button
+    step_6: Then I should be presented with a screen that indicates that my credentials are incorrect
+  fifth:
+    title: Log in with a incorrect password
+    description: This test is to determine if you can log in with a incorrect password
+    expected_result: Unsuccessful log in 
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: And I enter an email address of a test user
+    step_4: And I enter a random password
+    step_5: And I press the submit button
+    step_6: Then I should be presented with a screen that indicates that my credentials are incorrect
+  sixth: 
+    title: Log in with the correct credentials
+    description: This test is used for testing the log in page with the correct credentials
+    expected_result: Successful log in 
+    step_1: When I am on the the QA sandbox page
+    step_2: And I click on the log in tab
+    step_3: And I enter the email address of a test user
+    step_4: And I enter the password of a test user
+    step_5: And I press the submit button
+    step_6: Then I should be logged in

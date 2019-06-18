@@ -1,4 +1,3 @@
-
 const Page = require('./page')
 const TestData = require('../../util/test_data')
 const config = require('../../config/config')
@@ -27,6 +26,7 @@ class LoginPage extends Page {
       throw new Error('The login button did not load')
     }
   }
+
   async click (element) {
     await this.browser.click(element)
   }
@@ -42,9 +42,11 @@ class LoginPage extends Page {
       throw new Error('the password filed did not load')
     }
   }
+
   async enterEmail (user) {
     await this.browser.setValue(this.emailFieldSel, TestData.getUser(user).email)
   }
+
   async enterPassword (user) {
     await this.browser.setValue(this.passwordFieldSel, TestData.getUser(user).password)
   }
@@ -59,7 +61,7 @@ class LoginPage extends Page {
   async badEmailNot () {
     let userCard = await this.browser.isExisting(this.userCard)
     if (userCard) {
-      throw new Error('you have logged in without and EMAIL!!!!!!!')
+      throw new Error('you have logged in without an email!!!!!!!')
     }
   }
 

@@ -45,6 +45,10 @@ class TestData {
   static getBaseUrl () {
     return TestData.data.url
   }
+
+  static getUseCase() {
+    return TestData.data.use_cases
+  }
 }
 
 module.exports = TestData
