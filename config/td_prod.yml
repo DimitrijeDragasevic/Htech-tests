@@ -25,7 +25,7 @@ users:
 use_cases:
   first:
     title: Check for the login page
-    descrption: This test case is used to determine that the Log in page is loaded correctly
+    description: This test case is used to determine that the Log in page is loaded correctly
     expected_result: Log in page opening with correct fields and tittle and text
     step_1: When I am on the the QA sandbox page
     step_2: And I click on the log in tab

@@ -2,7 +2,7 @@
 # Convenience script for running Qa sand box tests.
 #
 # Parameters:
-# $3 environment (stage, prod) (default: stage)
+# $3 environment (stage, prod) (default: prod)
 # $2 browser (chrome, firefox) (default: chrome)
 # $3 and after are standard Cucumberjs parameters
 #
@@ -23,7 +23,7 @@
 
 
 environment=$1
-environment=${environment:=stage}
+environment=${environment:=prod}
 browser=$2
 browser=${browser:=chrome}
 

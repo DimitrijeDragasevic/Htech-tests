@@ -14,6 +14,8 @@ class TestPage extends Page {
   get submitButton () { return '[class="btn btn-primary mt-4 float-right"]' }
   get automatedToggle () { return '[class="pt-1 ml-2"]' }
   get deleteButton () { return '[class="btn btn-secondary ml-2 mb-3 btn-dark btn-lg pull-right"]' }
+  get popUpMenuDelete() {return '[class="btn btn-lg btn-danger "]'}
+  get testCaseStripe() {return '[class="list-group-item list-group-item-action"]'}
 
   async enterTestCaseCreation () {
     await this.browser.click(this.testCaseCard)
@@ -25,16 +27,16 @@ class TestPage extends Page {
     await this.browser.waitForVisible(this.testCaseTitle, config.waitTime.medium)
   }
 
-  async enterTitle (title) {
-    await this.browser.setValue(this.testCaseTitle, title)
+  async enterTitle (testCase) {
+    await this.browser.setValue(this.testCaseTitle, TestData.getUseCase(testCase).title)
   }
 
   async enterDescription (testCase) {
-    await this.browser.setValue(this.description, TestData.getUseCase(testCase).descrption)
+    await this.browser.setValue(this.description, TestData.getUseCase(testCase).description)
   }
 
-  async enterExpectedResult (eResult) {
-    await this.browser.setValue(this.expectedResult, eResult)
+  async enterExpectedResult (testCase) {
+    await this.browser.setValue(this.expectedResult, TestData.getUseCase(testCase).expected_result)
   }
 
   async enterStep (index, step) {
@@ -43,6 +45,27 @@ class TestPage extends Page {
 
   async addStepButton () {
     await this.browser.click(this.addStep)
+  }
+
+  async addTestCaseButton(){
+    await this.browser.click(this.submitButton)
+  }
+
+  async toogleAutomated(){
+    await this.browser.click(this.automatedToggle)
+  }
+
+  async deleteTestCases(){
+    let numberOfTestCases = await this.browser.elements(this.testCaseStripe)
+    for(let i=0;i<numberOfTestCases.value.length;i++){
+      await this.browser.waitForVisible(this.testCaseStripe, config.waitTime.medium)
+      await this.browser.click(this.testCaseStripe)
+      await this.browser.waitForVisible(this.deleteButton)
+      await this.browser.click(this.deleteButton)
+      await this.browser.waitForVisible(this.popUpMenuDelete)
+      await this.browser.click(this.popUpMenuDelete)
+    }
+    
   }
 }
 
